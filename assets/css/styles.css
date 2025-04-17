@@ -1,0 +1,161 @@
+/*Import Variables*/
+@import url(variables.css);
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,h2,h3 {
+    color: var(--title-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Reusable CSS Classes*/
+.section {
+    padding: 4rem 0 2rem;
+}
+
+.section__title {
+    font-size: var(--bigger-font-size);
+    text-align: center;
+    margin-bottom: var(--mb-2-5);
+}
+
+.section__title-gradient {
+    background: var(--text-gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/*Layout*/
+.main {
+    overflow: hidden; /*For animation and images*/
+}
+
+.container {
+    max-width: 968px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+}
+
+/*Header*/
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background: transparent;
+}
+
+/*Nav*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLogo {
+    display: flex;
+    width: 3rem;
+}
+
+.navToggle {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .navMenu {
+        position: fixed;
+        background-color: var(--body-color);
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding: 4rem 0 3rem;
+        transition: .4s;
+    }
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.navLink {
+    color: var(--white-color);
+    font-size: var(--h2-font-size);
+    text-transform: uppercase;
+    font-weight: var(--font-semi-bold);
+    background: var(--text-gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+}
+
+.navLink:hover {
+    background: var(--white-color);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.navClose {
+    position: absolute;
+    font-size: 2.5rem;
+    top: 1rem;
+    right: 1rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+/*show menu*/
+.show-menu {
+    top: 0;
+}
